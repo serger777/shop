@@ -1,0 +1,26 @@
+header.header
+	.top-line
+		.container
+			.socials.pull-left
+				ul.socials__list
+					- var socials = ['vk', 'fb', 'tw']
+					each social in socials
+						li.socials__item
+							a(href="#" class="socials__link socials__link_" + social)= social
+
+			.contacts.pull-right
+				.contacts-block.adress улю Матросова 6, офис 6
+				.contacts-block.phone  +7(910)9109999
+
+	.logo-line
+		.container
+			.logo
+				a: img('src=img/logo.png')
+			.search-form(action="" method="post")
+				input.search-form__input(type="search" rows="100px" placeholder="Что будем искать")
+				input.seacrh-form__submit(type="submit" value="найти")
+			+nav('box__nav-navigation', ['Карта проезда ', 'История заказов', 'Корзина'], 2)
+	.menu-line
+		.container
+			+nav('box_top-navigation', ['Планшеты ', 'Мобильные телефоны', 'MP3 плееры', 'Персональные компьютеры', 'Ноутбуки','Аксессуары', 'Бытовая техника' ], 2)
+

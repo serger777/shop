@@ -1,6 +1,6 @@
 .top-line{
   height: 77px;
-  box-shadow: 0px 2px 0px 0px rgba(235, 237, 239, 0.004);
+  box-shadow: 0px 2px 0px 0px rgba(235, 237, 239, 0.8);
   overflow: hidden;
   background-color: #fff;
     .socials{
@@ -44,6 +44,7 @@
 .logo-line{
   height: 90px;
   padding: 30px 0;
+  margin-bottom: 15px;
       .logo{
       display: inline-block;
         vertical-align: middle;
@@ -99,21 +100,52 @@
 
 
                 &:hover{
-                  color:  #ff6e35;
-                }
+                  color:#ff6600;
+                } 
+                    
+
               }
             }
     }
 
 }
 .menu-line{
+  background: white;
+  box-shadow: 0px 2px 0px 0px rgba(235, 237, 239, 0.8);
+  margin-bottom: 15px;
+
 
   .box_top-navigation{
 
     .box_top-navigation__item{
+     display: inline-block;
+      margin-left: 15px;
 
+      &:nth-child(1){
+      margin-left: 0;
+    }
+   
+     
       .box_top-navigation__link{
+        display: inline-block;
+        padding: 12px 5px;
         font-size: 16px;
+        color:black;
+        text-decoration: none;
+        &:hover{
+          background-color: #e4e2e2;
+
+
+        }
+      }
+    }
+    .box_top-navigation__item_active{
+      .box_top-navigation__link{
+        background-color: #ff6600;
+        color: white;
+        &:hover{
+          background-color: #ff6600;
+        }
       }
     }
   }
@@ -121,19 +153,7 @@
 
 
 
-@mixin get-sprite ($map, $icon) {
-  $sprite-image: sprite-file($map, $icon);
-  $sprite-map: sprite-url($map);
-  $sprite-position: sprite-position($map, $icon);
 
-  background: $sprite-map $sprite-position no-repeat;
-
-  $sprite-height: image-height($sprite-image);
-  $sprite-width: image-width($sprite-image);
-
-  height: $sprite-height;
-  width: $sprite-width;
-}
 
 
 //$icons-layout: horizontal;

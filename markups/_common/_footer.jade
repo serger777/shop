@@ -1,0 +1,18 @@
+footer.footer
+   .container
+         .top-footer
+            .footer-content__left
+               .logo
+                  a: img('src=img/logo-footer.png')
+            .footer-content__right
+               .socials-footer
+                  ul.socials-footer__list
+                     - var socials = ['vk-f', 'fb-f', 'tw-f']
+                     each social in socials
+                        li.socials-footer__item
+                           a(href="#" class="socials-footer__link socials-footer__link_" + social)= social
+               +nav('box_footer-navigation', ['Планшеты ', 'Мобильные телефоны', 'MP3 плееры', 'Персональные компьютеры', 'Ноутбуки', 'Аксессуары', 'Бытовая техника'], 2)
+
+   .bottom-footer
+         .box-copyright All rights reserved. 2015. no copy alowed
+

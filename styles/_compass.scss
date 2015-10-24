@@ -1,0 +1,24 @@
+.crumbs__navigation{
+  .crumbs__navigation__list{
+
+    .crumbs__navigation__item {
+      display: inline-block;
+      .crumbs__navigation__link{
+        text-decoration: none;
+        font-size: 14px;
+
+      }
+    }
+    .crumbs__navigation__item_active{
+      .crumbs__navigation__link{
+        color:#ff6600;
+        text-decoration: underline;
+
+      }
+
+    }
+  }
+}
+.sidebar__wrapper{
+  width: 340px;
+}

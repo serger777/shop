@@ -22,11 +22,13 @@ html
 					.container
 
 						.content
+							+nav('crumbs__navigation', ['Главаня >', 'Каталог'], 1)
+							h1	Мобильные телефоны
 							.content__inner
 
 								block content
-		footer.footer
-			.container
-				.footer__content
-					| &copy; Все права защищены
+
+
+		include _common/_footer
+
 		script("src=/js/main.js")

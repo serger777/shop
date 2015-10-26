@@ -1,4 +1,4 @@
-@import "compass";
+@import "_misc/_page";
 
 /* --------- normalize --------- */
 
@@ -16,4 +16,9 @@
 
 @import "sections/header";
 
-@import "sections/footer";
+@import "sections/_footer";
+
+@import "_misc/_sidebar";
+@import "_misc/_font";
+@import "_misc/_content";
+

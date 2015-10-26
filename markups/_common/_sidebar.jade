@@ -1,6 +1,50 @@
+- var colors = ["ffffff","cccccc","000000","0a3153","ff1800","fff343","fb914a","92c37c","40a6ff","9870ad","dc78ad","7f401d"]
+- var brands=["Lenovo","Apple","Samsung","Asus","Motorola"]
+- var ourOS =["Androin","IOS","Windows Mobile","Symbian","Custom"]
 .sidebar
-	.accoderon
-		- for (var i = 1; i < 11; i++)
-			.accodeon__content
-				.class-wrapper
-					.class Я пункт номер #{i}
+	+nav('box__nav-sidebar', ['Флагманы ', 'Бюджетная линейка'], 1)
+	.accorderon
+		.accordeon__content
+			.accordeon__item_block
+				li.accordeon__item.accordeon__items-why
+					a.trigger_inner(hreff="all-1").trigger_close Наличие в магазинах
+					ul.inner__list
+						li.inner__list_item
+							label.radio(for="radio-why-1").radio__text Во всех магазинах
+								input(type="radio" checked="checked" name='why' id="radio-why-1")
+								span.outer
+									span.inner
+						li.inner__list_item
+							label.radio(for="radio-why-2").radio__text В ближайщих ко мне магазинах
+								input(type="radio" checked="checked" name='why' id="radio-why-2")
+								span.outer
+										span.inner
+
+				li.accordeon__item.accordeon__items-brend
+					a.trigger_inner.trigger_close Бренды
+					.inner-item
+						form.brand
+							+check-brend("brand",brands)
+							a(href="#").brand__filter-off#filter-off_1 Сбросить фильтр
+				li.accordeon__item.accordeon__items-price
+					a.trigger_inner.trigger_close Цена
+					.inner-item
+						form.price
+							span.price__text от
+							input(type="text").price__from
+							span.price__text до
+							input(type="text").price__to
+						.slider здесь будет слайдер
+				li.accordeon__item.accordeon__items-color
+					a.trigger_inner.trigger_close Цвет
+					.inner-item.color
+						ul.color__list
+							each color in colors
+								li(class="color__item " + "color__item_" + color)
+				li.accordeon__item.accordeon__items-color-os
+					a.trigger_inner.trigger_close Операционные системы
+					.inner-item
+						form.os
+							+check-os("os",ourOS)
+							a(href="#").brand__filter-off#filter-off_3 Сбросить фильтр
+

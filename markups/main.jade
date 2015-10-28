@@ -9,6 +9,7 @@ html
 	head
 		meta(name="viewport" content="width=device-width, initial-scale=1" )
 		link(rel="stylesheet" type='text/css' href="/css/main.css")
+		script(src='bower_components/modernizr/modernizr.js')
 		title
 			block title
 	body
@@ -28,10 +29,13 @@ html
 
 								block content
 
+				include _common/_block-info
 
 		include _common/_footer
 
 
 		script("src=/bower_components/jquery/jquery.min.js")
-		script("src=/js/main.js")
 		script("src=/js/select2.min.js")
+		script("src=/js/columnizer.js")
+		script("src=/bower_components/jquery-ui/jquery-ui.min.js")
+		script("src=/js/main.js")

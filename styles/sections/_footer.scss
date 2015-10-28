@@ -11,9 +11,9 @@ $socials-map: sprite-map('icons/*.png', $spacing: 70px);
 }
 .footer{
   background-color: black;
-  padding-top: 40px;
+  background: url("../img/footer.png") repeat-x;
   .logo{
-    margin-top: 25px;
+    margin-top: 70px;
   }
   .bottom-footer{
     min-height: 25px;
@@ -29,12 +29,14 @@ $socials-map: sprite-map('icons/*.png', $spacing: 70px);
 .top-footer{
   min-height: 190px;
     .footer-content__left{
-      width: 50%;
+      width: 45%;
       float: left;
+
     }
 
     .footer-content__right{
-      width: 50%;
+      margin-top: 35px;
+      width: 55%;
       text-align: right;
       float: right;
     .socials-footer{
@@ -45,6 +47,14 @@ $socials-map: sprite-map('icons/*.png', $spacing: 70px);
           .socials-footer__link{
             font-size: 0;
             padding: 25px;
+            @each $social in ('fb-f', 'vk-f', 'tw-f') {
+              &_#{$social} {
+                &:hover {
+                  background: url("../img/icons/#{$social}-hover.png") no-repeat center;
+                }
+                background: url("../img/icons/#{$social}.png") no-repeat center;
+              }
+            }
 
 
           }
@@ -64,6 +74,9 @@ $socials-map: sprite-map('icons/*.png', $spacing: 70px);
             color:white;
             font-size: 14px;
             margin-left: 25px;
+            &:hover{
+              color:#ff6600;
+            }
 
 
           }

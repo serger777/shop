@@ -1,3 +1,17 @@
+/*-----------INFO-----------*/
+.block-info{
+  p {margin: 0 15px 10px 0;
+    text-align: justify;}
+  padding: 10px;
+  margin-bottom: 20px;
+    .info-text{
+      font-size: 20px;
+
+    }
+}
+
+/*-------------*/
+
 .content-page{
   float: right;
   width: 740px;
@@ -462,6 +476,13 @@
   width: 33px;
   height: auto;
 }
+
 .slider__item{
   display: inline-block;
+}
+.wrapper-inner__price{
+  &after{
+    content:'';
+    background: url(../img/rubl.png);
+  }
 }

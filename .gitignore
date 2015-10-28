@@ -3,5 +3,5 @@ app/bower_components
 dist
 data.php
 .idea
-
+bower_components
 /vendor/

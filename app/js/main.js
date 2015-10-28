@@ -29,18 +29,39 @@ var main = (function(){
 		});
 	}
 	var _columnizer = function(){
-	$('.block-info-text').columnize({
-		columns: 2
+		$('.block-info-text').columnize({
+			columns: 2
 	});
 	}
 
 
  //Прослушивает события
 	var _setUpListners = function() {
-	$('.trigger').on('click',_accordeonUp);
-	$('#filter-off_1').on('click', _clearCheckbox);
-	$('#filter-off_2').on('click', _clearCheckbox);
+		$('.trigger').on('click',_accordeonUp);
+		$('#filter-off_1').on('click', _clearCheckbox);
+		$('#filter-off_2').on('click', _clearCheckbox);
+		$('#list-1').on('click', _sort_1);
+		$('#list-2').on('click', _sort_2);
+		$('#list-3').on('click', _sort_3);
 	};
+	var _sort_1 = function (){
+		$('#list-1').addClass('sort-bar__item_1_active');
+		$('#list-2').removeClass('sort-bar__item_2_active');
+		$('#list-3').removeClass('sort-bar__item_3_active');
+		$('#var').addClass('var-1').removeClass('var-2').removeClass('var-3')
+	}
+	var _sort_2 =  function (){
+		$('#list-2').addClass('sort-bar__item_2_active');
+		$('#list-1').removeClass('sort-bar__item_1_active');
+		$('#list-3').removeClass('sort-bar__item_3_active');
+		$('#var').addClass('var-2').removeClass('var-1').removeClass('var-3')
+	}
+	var _sort_3 = function (){
+		$('#list-3').addClass('sort-bar__item_3_active');
+		$('#list-2').removeClass('sort-bar__item_2_active');
+		$('#list-1').removeClass('sort-bar__item_1_active');
+		$('#var').addClass('var-3').removeClass('var-2').removeClass('var-1')
+	}
 	var _accordeonUp = function(e){
 		e.preventDefault();
 		var $this = $(this),

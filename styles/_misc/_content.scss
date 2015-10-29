@@ -20,7 +20,7 @@
     display: inline-block;
      margin-bottom: 20px;
   }
-  .var-1 {
+  .sel-1 {
     margin-bottom: 40px;
     .contetn-page__item{
       &:hover {
@@ -69,10 +69,10 @@
           @include border-radius(5px);
           border: 1px solid #dee1e4;
           &:hover {
-            border: 1px solid orange;
+            border: 1px solid #ff6600;
           }
           &_active {
-            border: 1px solid orange;
+            border: 1px solid #ff6600;
           }
 
         }
@@ -158,7 +158,7 @@
         width: 103px;
         height: 32px;
         color: #ffffff;
-        background: orange;
+        background: #ff6600;
         border: none;
         font-family: opensans-bold-webfont;
         font-size: 1em;
@@ -179,12 +179,12 @@
 
     }
   }
-  .var-2{
+  .sel-2{
     margin-bottom: 49px;
     width: 760px;
     .contetn-page__item{
       &:hover {
-        @include box-shadow(#d1d1d1 0px 0px 6px);
+        @include box-shadow(#d1d1d1 5px 5px 10px);
       }
       display: inline-block;
       margin-right: 10px;
@@ -233,10 +233,10 @@
             border-radius: 5px;
             border: 1px solid #dee1e4;
             &:hover {
-              border: 1px solid orange;
+              border: 1px solid #ff6600;
             }
             &_active {
-              border: 1px solid orange;
+              border: 1px solid #ff6600;
             }
 
           }
@@ -296,7 +296,6 @@
             display: inline-block;
             text-align: center;
             @include border-radius(30px);
-            //display: none;
             position: relative;
             margin-top: -15px;
           }
@@ -313,7 +312,7 @@
           width: 103px;
           height: 32px;
           color: #ffffff;
-          background: orange;
+          background: #ff6600;
           border: none;
           font-family: opensans-bold-webfont;
           font-size: 1em;
@@ -338,7 +337,7 @@
       }
     }
   }
-  .var-3 {
+  .sel-3 {
     margin-bottom: 67px;
     .contetn-page__item{
       &:hover {
@@ -402,7 +401,7 @@
         width: 103px;
         height: 32px;
         color: #ffffff;
-        background: orange;
+        background: #ff6600;
         border: none;
         font-family: opensans-bold-webfont;
         font-size: 1em;
@@ -439,7 +438,7 @@
     background: #ffffff url('../img/phones/phone_#{$q}_min_1.png') no-repeat center;
   }
   .min-pick-#{$q}_2{
-    background: #ffffff url('./img/phones/phone_#{$q}_min_2.png') no-repeat center;
+    background: #ffffff url('../img/phones/phone_#{$q}_min_2.png') no-repeat center;
   }
   .min-pick-#{$q}_3{
     background: #ffffff url('../img/phones/phone_#{$q}_min_3.png') no-repeat center;

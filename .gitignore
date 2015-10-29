@@ -5,3 +5,4 @@ data.php
 .idea
 bower_components
 /vendor/
+.sass-cache

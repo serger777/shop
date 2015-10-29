@@ -24,6 +24,8 @@ $colors :("#ffffff","#cccccc","#000000","#0a3153","#ff1800","#fff343","#fb914a",
         text-decoration: none;
         color: #7f7f7f;
         font-size: 14px;
+        width: 100px;
+        padding: 11px 30px;
       }
     }
     .box__nav-sidebar__item_active{
@@ -112,6 +114,7 @@ $medium-color: rgb(84,103,117);
 
   .inner__list {
     padding: 0px 20px 20px;
+    margin-top: 10px;
   }
 
   .inner__list_item {

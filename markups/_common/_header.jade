@@ -10,12 +10,13 @@ header.header
 
 			.contacts.pull-right
 				.contacts-block.adress ул Матросова 6, офис 6
-				.contacts-block.phone  +7(910)9109999
+				.contacts-block.phone
+					a(href="tel:+7(910)9109999") +7(910)910-9999
 
 	.logo-line
 		.container
 			.logo
-				a: img('src=img/logo.png')
+				a(src="#"): img(src=img/logo.png alt="colteh logo")
 			.search-form(action="" method="post")
 				input.search-form__input(type="search" rows="100px" placeholder="Что будем искать")
 				input.seacrh-form__submit(type="submit" value="найти")

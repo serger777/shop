@@ -1,6 +1,3 @@
-$socials: fb-f, vk-f, tw-f;
-
-
 $socials-map: sprite-map('icons/*.png', $spacing: 70px);
 
 
@@ -50,12 +47,11 @@ $socials-map: sprite-map('icons/*.png', $spacing: 70px);
             @each $social in ('fb-f', 'vk-f', 'tw-f') {
               &_#{$social} {
                 &:hover {
-                  background: url("../img/icons/#{$social}-hover.png") no-repeat center;
+                  @include get-sprite($socials-map, #{$social}-hover);
                 }
-                background: url("../img/icons/#{$social}.png") no-repeat center;
+                @include get-sprite($socials-map, $social);
               }
             }
-
 
           }
 
@@ -75,7 +71,7 @@ $socials-map: sprite-map('icons/*.png', $spacing: 70px);
             font-size: 14px;
             margin-left: 25px;
             &:hover{
-              color:#ff6600;
+              opacity: 0.8;
             }
 
 

@@ -1,19 +1,10 @@
-
-<!--mixin list(className, items, activeIndx)-->
-<!--	ul(class= className + "__list")-->
-<!--		each item, indx in items-->
-<!--			li(class=className + "__item " + ((activeIndx == indx) ? className + '__item' + '_active' : ''))-->
-<!--				a(href="#" class= className + "__link")=item-->
-<!--mixin list-class(className, items, activeIndx)-->
-<!--	ul(class= className + "__list")-->
-<!--		each item, indx in items-->
-<!--			li(class=className + "__item " + ((activeIndx == indx) ? className + '__item' + '_active' : '') + className + "__item_" + item)-->
-<!--				a(href="#" class= className + "__link")=item--><!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <html>
  	 <head>
+ 	  	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  	  	 <meta name="viewport" content="width=device-width, initial-scale=1">
  	  	 <link rel="stylesheet" type="text/css" href="/css/main.css">
  	  	 <script src="bower_components/modernizr/modernizr.js"></script>
@@ -203,14 +194,15 @@
  	  	  	  	  	  	  	  	  	  	  	  	  	 <option id="rating" class="content-bar__option">По рейтингу</option>
  	  	  	  	  	  	  	  	  	  	  	  	 </select>
  	  	  	  	  	  	  	  	  	  	  	 </form>
- 	  	  	  	  	  	  	  	  	  	  	 <ul class="content-bar__list"><span class="content-bar__list__text">Вид каталога</span>
+ 	  	  	  	  	  	  	  	  	  	  	 <ul class="content-bar__list">
+ 	  	  	  	  	  	  	  	  	  	  	  	 <li class="content-bar__list__text">Вид каталога</li>
  	  	  	  	  	  	  	  	  	  	  	  	 <li id="list-1" class="content-bar__item content-bar__item_1"></li>
  	  	  	  	  	  	  	  	  	  	  	  	 <li id="list-2" class="content-bar__item content-bar__item_2"></li>
  	  	  	  	  	  	  	  	  	  	  	  	 <li id="list-3" class="content-bar__item content-bar__item_3"></li>
  	  	  	  	  	  	  	  	  	  	  	 </ul>
  	  	  	  	  	  	  	  	  	  	 </div>
  	  	  	  	  	  	  	  	  	  	 <div class="content-page">
- 	  	  	  	  	  	  	  	  	  	  	 <div id="var" class="var-3">
+ 	  	  	  	  	  	  	  	  	  	  	 <div id="sel" class="sel-3">
  	  	  	  	  	  	  	  	  	  	  	  	 <ul class="content-page__list">
  	  	  	  	  	  	  	  	  	  	  	  	  	 <li class="contetn-page__item">
  	  	  	  	  	  	  	  	  	  	  	  	  	  	 <div class="wrapper-inner">

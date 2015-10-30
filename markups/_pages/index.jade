@@ -6,7 +6,7 @@ block content
         .sidebar__wrapper
             include ../_common/_sidebar
         .article__inner
-            include ../_common/_content
+            include ../_common/_sort
             .content-page
                 .sel-3#sel
                     ul.content-page__list
@@ -17,16 +17,11 @@ block content
                                         a(class='main-pick main-pick-' + i)
                                             img(class="gallery__img" src="img/phones/phone_" + i + ".png" alt=" ").image-gallery
                                         ul.slider__list
-                                            li.slider__item
+                                            - for (var j = 1; j<5; j++)
                                                 li.slider__item
-                                                    a(class=' min-pick min-pick_1 min-pick-' + i + '_1')
-                                                        img(src="img/phones/phone_" + i + ".png" alt="").image-gallery_min
-                                                li.slider__item
-                                                    a(class=' min-pick min-pick_2 min-pick-' + i + '_2')
-                                                        img(src="img/phones/phone_" + i + "_min_2.png" alt="").image-gallery_min
-                                                li.slider__item
-                                                    a(class=' min-pick min-pick_3  min-pick-' + i + '_3')
-                                                        img(src="img/phones/phone_" + i + "_min_3.png" alt="").image-gallery_min
+                                                   a(class=' min-pick min-pick_'+ j +' min-pick-' + j + '_1')
+                                                            img(src="img/phones/phone_" + j + ".png" alt="").image-gallery_min
+
                                     p.wrapper-inner__article Артикл
                                         - var ch ="  ";
                                         span.wrapper-inner__article_number

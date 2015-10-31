@@ -43,13 +43,19 @@ $socials-map: sprite-map('icons/*.png', $spacing: 70px);
           margin-left: 90px;}
     margin-top: 5px;
         .phone{
+
           font-size:  18px;
           font-family: opensans-semibold-webfont;
+          .phone_link{
+            text-decoration: none;
+            color:black;
+          }
             &:before{
               content: '';
               margin-right: 8px;
               vertical-align: baseline;
               display: inline-block;
+
               @include get-sprite($socials-map, phone);
 
           }

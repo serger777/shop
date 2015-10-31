@@ -12,6 +12,8 @@
 
 /*-------------*/
 
+
+
 .content-page{
   float: right;
   width: 740px;
@@ -20,7 +22,8 @@
     display: inline-block;
      margin-bottom: 20px;
   }
-  .sel-1 {
+
+  .content-page__list_1 {
     margin-bottom: 40px;
     .contetn-page__item{
       &:hover {
@@ -116,28 +119,34 @@
         color: #333333;
         font-size: 1em;
       }
-      &__rating {
-        .rating_image {
+
+      .inner__rating-stars {
+        display: inline-block;
+        vertical-align: middle;
+        $stars-map: sprite-map('icons/star/*.png', $spacing: 30px);
+        .rating-stars-item {
           display: inline-block;
-          position: relative;
-          width: 98px;
-          height: 15px;
-          background: url('../img/stars.png') no-repeat center;
-          margin-right: 13px;
+          @include get-sprite($stars-map, nofild);
+
+          &.rating-stars-filed {
+            @include get-sprite($stars-map, fild);
+          }
         }
+      }
         .rating-result {
           background: #b5beca;
           color: #fbfbfb;
           width: 28px;
-          font-size: 0.9em;
+          font-size: 12px;
+          line-height: 15px;
           display: inline-block;
           text-align: center;
-          -webkit-border-radius: 30px;
-          -moz-border-radius: 30px;
-          border-radius: 30px;
-          margin-top: -3px;
+          -webkit-border-radius: 20px;
+          -moz-border-radius: 20px;
+          vertical-align: baseline;
+          margin-left: 8px;
         }
-      }
+
       .wrap-price {
         float: right;
         display: block;
@@ -179,7 +188,7 @@
 
     }
   }
-  .sel-2{
+  .content-page__list_2{
     margin-bottom: 49px;
     width: 760px;
     .contetn-page__item{
@@ -259,14 +268,17 @@
           width: 200px;
           margin-bottom: 5px;
           &__item{
-            color: #333333;
-            &:nth-child(even) {
+              color: #333333;
               background: #fbfbfb;
-            }
-            &:nth-child(odd) {
-              background: #e6e6e6;
-            }
+            &_value{
+            float: right;
           }
+
+          }
+          &_color{
+             background: #e6e6e6;
+           }
+        }
           .char__what {
             text-align: left;
           }
@@ -275,30 +287,37 @@
             text-align: right;
           }
 
-        }
-        &__rating {
-          margin-bottom: 5px;
-          padding-left: 35px;
-          .rating_image {
-            display: inline-block;
 
-            position: relative;
-            width: 98px;
-            height: 15px;
-            background: url('../img/stars.png') no-repeat center;
-            margin-right: 13px;
-          }
-          .rating-result {
-            background: #b5beca;
-            color: #fbfbfb;
-            width: 28px;
-            font-size: 0.9em;
+        .wrapper-inner__rating{
+          text-align: center;
+          margin-bottom: 5px;
+        .inner__rating-stars {
+          display: inline-block;
+          vertical-align: middle;
+
+          $stars-map: sprite-map('icons/star/*.png', $spacing: 30px);
+          .rating-stars-item {
             display: inline-block;
-            text-align: center;
-            @include border-radius(30px);
-            position: relative;
-            margin-top: -15px;
+            @include get-sprite($stars-map, nofild);
+
+            &.rating-stars-filed {
+              @include get-sprite($stars-map, fild);
+            }
           }
+        }
+        .rating-result {
+          background: #b5beca;
+          color: #fbfbfb;
+          width: 28px;
+          font-size: 12px;
+          line-height: 15px;
+          display: inline-block;
+          text-align: center;
+          -webkit-border-radius: 20px;
+          -moz-border-radius: 20px;
+          vertical-align: baseline;
+          margin-left: 8px;
+        }
         }
         &__price {
           margin: 0 55px;
@@ -337,7 +356,7 @@
       }
     }
   }
-  .sel-3 {
+  .content-page__list_3 {
     margin-bottom: 67px;
     .contetn-page__item{
       &:hover {
@@ -466,6 +485,11 @@
     &:hover, &_active {
       background: #e0e0e0;
     }
+
+  }
+  &__link{
+    text-decoration: none;
+    color:#7f7f7f;
   }
 }
 .image-gallery{
@@ -479,10 +503,4 @@
 
 .slider__item{
   display: inline-block;
-}
-.wrapper-inner__price{
-  &after{
-    content:'';
-    background: url(../img/rubl.png);
-  }
 }

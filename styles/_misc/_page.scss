@@ -16,15 +16,19 @@
     float: left;
     &__text {
       margin-right: 10px;
+      display: inline-block;
+      vertical-align: middle;
     }
 
   }
   &__select {
-     border: 1px solid #dddddd;
+    border: 1px solid #dddddd;
     color: #7f7f7f;
     border-radius: 5px;
     width: 142px;
     height: 28px;
+    display: inline-block;
+    vertical-align: middle;
   }
   &__option{
     &:last-child{
@@ -34,10 +38,51 @@
   &__list {
     &__text{
       display: inline-block;
-      vertical-align: bottom;
-      margin-bottom: 18px;
+      vertical-align: middle;
+      margin-right: 20px;
+      margin-bottom: 4px;
     }
+    display: inline-block;
+    vertical-align: middle;
+
+  }
+  &__block{
     float: right;
+  }
+
+  @mixin get-sprite ($map, $icon) {
+    $sprite-image: sprite-file($map, $icon);
+    $sprite-map: sprite-url($map);
+    $sprite-position: sprite-position($map, $icon);
+
+    background: $sprite-map $sprite-position  no-repeat ;
+
+  }
+
+
+  $items:sort_1, sort_2, sort_3;
+
+  $sort-map: sprite-map("icons/sort/*.png", $spacing: 70px);
+
+
+
+  @each $item in $items{
+
+     .content-bar__#{$item}{
+       .sort-icon{
+      @include get-sprite($sort-map, $item);
+         &:hover{
+           @include get-sprite($sort-map, #{$item}_active);
+         }
+
+    }
+
+  }
+    .content-bar__#{$item}_active{
+      .sort-icon {
+      @include get-sprite($sort-map, #{$item}_active);
+    }
+    }
   }
   &__item {
     cursor: pointer;
@@ -46,32 +91,17 @@
     border-left: 1px solid #dee1e4;
     display: inline-block;
     vertical-align: bottom;
-    &_1 {
-      background: url('../img/sort_1.png') no-repeat center;
-      &:hover{
-        background: url('../img/sort_1_active.png') no-repeat center;
-      }
-      &_active{
-        background: url('../img/sort_1_active.png') no-repeat center;
-      }
-    }
-    &_2 {
-      background: url('../img/sort_2.png') no-repeat center;
-      &:hover{
-        background: url('../img/sort_2_active.png') no-repeat center;
-      }
-      &_active{
-        background: url('../img/sort_2_active.png') no-repeat center;
-      }
-    }
-    &_3 {
-      background: url('../img/sort_3.png') no-repeat center;
-      &:hover{
-        background: url('../img/sort_3_active.png') no-repeat center;
-      }
-      &_active{
-        background: url('../img/sort_3_active.png') no-repeat center;
-      }
-    }
+    position: relative;
+  }
+  .sort-icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin-top: 17px;
+    margin-left: 17px;
   }
 }
+
+

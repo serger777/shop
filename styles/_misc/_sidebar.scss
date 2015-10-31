@@ -36,7 +36,6 @@ $colors :("#ffffff","#cccccc","#000000","#0a3153","#ff1800","#fff343","#fb914a",
 
   }
 }
-$secondary-color: rgb(240,139,59);
 $medium-color: rgb(84,103,117);
 
 .accordeon__content {
@@ -133,7 +132,7 @@ $medium-color: rgb(84,103,117);
         opacity: 1;
       }
       &:checked + .outer {
-        border: 3px solid $secondary-color;
+        border: 3px solid $orange;
       }
       &:focus + .outer .inner {
         //border: 3px solid $secondary-color;
@@ -157,7 +156,7 @@ $medium-color: rgb(84,103,117);
       border-radius: 50%;
       background-color: #fff;
       &:focus {
-        border: 3px solid $secondary-color;
+        border: 3px solid $orange;
       }
     }
 
@@ -173,7 +172,7 @@ $medium-color: rgb(84,103,117);
       display: block;
       margin: 1px;
       border-radius: 50%;
-      background-color: #ff6600;
+      background-color: $orange;
       opacity: 0;
     }
 
@@ -219,6 +218,7 @@ $medium-color: rgb(84,103,117);
     }
     &__from {
       margin-right: 42px;
+      margin-bottom: 10px;
     }
   }
   .color {
@@ -247,10 +247,10 @@ $medium-color: rgb(84,103,117);
         cursor: pointer;
         border-radius: 5px;
         &:hover {
-          border: 3px solid #ff6600;
+          border: 3px solid $orange;
         }
         &_active {
-          border: 3px solid #ff6600;
+          border: 3px solid $orange;
         }
       }
     }

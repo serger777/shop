@@ -15,3 +15,24 @@ $fonts : (opensans-bold-webfont, opensans-bolditalic-webfont, opensans-extrabold
   }
 }
 
+@font-face {
+  font-family: 'als_rublregular';
+  src: url($fontsDir+'rouble-webfont.eot');
+  src: url($fontsDir+'rouble-webfont.eot?#iefix') format('embedded-opentype'),
+  url($fontsDir+'rouble-webfont.woff2') format('woff2'),
+  url($fontsDir+'rouble-webfont.woff') format('woff'),
+  url($fontsDir+'rouble-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;}
+.rub{
+  font-family: 'als_rublregular';
+  font-style: normal;
+    &:after{
+      content:'a';
+      font-style: inherit;
+      font-style: inherit;
+      line-height: inherit;
+      margin-left: 5px;
+    }
+
+}

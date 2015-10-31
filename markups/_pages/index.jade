@@ -7,9 +7,26 @@ block content
             include ../_common/_sidebar
         .article__inner
             include ../_common/_sort
-            .content-page
-                .sel-3#sel
-                    ul.content-page__list
+        .content-bar
+                    form.content-bar__form-sort
+                        span.content-bar__form-sort__text
+                            | Сортировать по
+                        select.content-bar__select(size="1")
+                            option.content-bar__option#price По цене
+                            option.content-bar__option#rating По рейтингу
+
+
+                    .content-bar__block
+                        .content-bar__list__text Вид каталога
+                        ul.content-bar__list
+                            - var items =['1', '2', '3']
+                            each item in items
+                                li( class="content-bar__item content-bar__sort_"+ item )
+                                    a(href='#sel-content').sort_view-link
+                                        .sort-icon
+
+        .content-page
+                    ul.content-page__list.content-page__list_1#sel-content
                         - for (var i=1; i<10; i++)
                             li.contetn-page__item
                                 .wrapper-inner
@@ -17,7 +34,7 @@ block content
                                         a(class='main-pick main-pick-' + i)
                                             img(class="gallery__img" src="img/phones/phone_" + i + ".png" alt=" ").image-gallery
                                         ul.slider__list
-                                            - for (var j = 1; j<5; j++)
+                                            - for (var j = 1; j<4; j++)
                                                 li.slider__item
                                                    a(class=' min-pick min-pick_'+ j +' min-pick-' + j + '_1')
                                                             img(src="img/phones/phone_" + j + ".png" alt="").image-gallery_min
@@ -32,62 +49,24 @@ block content
                                         span.about_text
                                             | Смартфон Samsung GT-I9301I GALAXY S 3 Ceramic White Моноблок, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...
                                     ul.char
-                                        li.char__item
-                                            span.char__what
-                                                | Тип SIM-карты &#160
-                                            span.chars__this
-                                                | Micro-SIM
-                                            span.char__comma
-                                                | ,&#160
-                                        li.char__item
-                                            span.char__what
-                                                | Количество SIM-карт &#160
-                                            span.chars__this
-                                                | 1
-                                            span.char__comma
-                                                | ,&#160
-                                        li.char__item
-                                            span.char__what
-                                                | Цвет &#160
-                                            span.char__this
-                                                | Белый
-                                            span.char__comma
-                                                | ,&#160
-                                        li.char__item
-                                            span.char__what
-                                                | ОС &#160
-                                            span.chars__this
-                                                | Android
-                                            span.char__comma
-                                                | ,&#160
-                                        li.char__item
-                                            span.char__what
-                                                | Связь 3G &#160
-                                            span.char__this
-                                                | Есть
-                                            span.char__comma
-                                                | ,&#160
-                                        li.char__item
-                                            span.char__what
-                                                | 4G(LTE) &#160
-                                            span.char__this
-                                                | Нет
-                                            span.char__comma
-                                                | ,&#160
-                                        li.char__item
-                                            span.char__what
-                                                | GPS-модуль &#160
-                                            span.char__this
-                                                | Есть
-                                            span.char__comma
-                                                | &#160 ...
-                                    .wrapper-inner__rating
-                                        a.rating_image
+                                       - var options ={'Тип SIM-карты': 'Micro-SIM','Количество SIM-карт' : '1', 'Цвет' : 'белый', 'ОС' : 'Android', 'связь 4G' : 'Есть', 'GPS-модуль': 'есть' }
+                                       - var index = 0;
+                                       - for (item in options)
+                                          li(class="char__item" +(!(index++ %2)? ' char_color':""))= item
+                                                span.char__item_value= options[item]
+
+                                    div(class ="wrapper-inner__rating" data-rating="3")
+                                        ul.inner__rating-stars
+                                            li.rating-stars-item.rating-stars-filed
+                                            li.rating-stars-item.rating-stars-filed
+                                            li.rating-stars-item.rating-stars-filed
+                                            li.rating-stars-item
+                                            li.rating-stars-item
                                         span.rating-result
-                                            | 4
+                                            | 3
                                     .wrap-price
-                                        p.wrapper-inner__price
-                                            | 11 290 &#8399
+                                        p.wrapper-inner__price 11290
+                                            i.rub
                                         button.wrapper-inner__button
                                             | В корзину
                                         .wrapper-inner__avail
@@ -96,13 +75,13 @@ block content
                     .pages
                         ul.pages__list
                             li.pages__item
-                                a.pages__link <
+                                a(href='#').pages__link <
                             li.pages__item.pages__item_active
-                                a.pages__link 1
+                                a(href='#').pages__link 1
                             li.pages__item
-                                a.pages__link 2
+                                a(href='#').pages__link 2
                             li.pages__item
-                                a.pages__link 3
+                                a(href='#').pages__link 3
                             li.pages__item
-                                a.pages__link >
+                                a(href='#').pages__link >
 

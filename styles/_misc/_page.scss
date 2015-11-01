@@ -67,8 +67,14 @@
 
 
   @each $item in $items{
+    .content-bar__#{$item}.active{
 
+        .sort-icon {
+          @include get-sprite($sort-map, #{$item}_active);
+        }
+      }
      .content-bar__#{$item}{
+
        .sort-icon{
       @include get-sprite($sort-map, $item);
          &:hover{
@@ -77,12 +83,9 @@
 
     }
 
+
   }
-    .content-bar__#{$item}_active{
-      .sort-icon {
-      @include get-sprite($sort-map, #{$item}_active);
-    }
-    }
+
   }
   &__item {
     cursor: pointer;
@@ -92,6 +95,9 @@
     display: inline-block;
     vertical-align: bottom;
     position: relative;
+    .sort_view-link{
+      display: inline-block;
+    }
   }
   .sort-icon {
     position: absolute;

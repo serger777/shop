@@ -21,8 +21,8 @@ block content
                         ul.content-bar__list
                             - var items =['1', '2', '3']
                             each item in items
-                                li( class="content-bar__item content-bar__sort_"+ item )
-                                    a(href='#sel-content').sort_view-link
+                                li( class="content-bar__item content-bar__sort_"+ item data-view=item)
+                                    a(href='#').sort_view-link
                                         .sort-icon
 
         .content-page

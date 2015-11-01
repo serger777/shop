@@ -8,7 +8,6 @@ var main = (function(){
 		_columnizer();
 		_slider();
 		_RatingWidget();
-		_ViewStateChange
 	};
 	var _slider = function() {
 
@@ -78,7 +77,7 @@ var main = (function(){
 					var
 						$this =$(this),
 						ratingAmount = parseInt($this.data('rating'));
-					_generateMarkup(ratingAmount, $this);
+						_generateMarkup(ratingAmount, $this);
 
 				});
 			}
@@ -93,10 +92,9 @@ var main = (function(){
 		$('.trigger').on('click',_accordeonUp);
 		$('#filter-off_1').on('click', _clearCheckbox);
 		$('#filter-off_2').on('click', _clearCheckbox);
-		$('.sort_view-link').on('click', _ViewStateChange);
 		$('.min-pick').on('click', _galleryStart);
 			};
-	
+
 
 	var _galleryStart = function(e) {
 		e.preventDefault();
@@ -116,47 +114,9 @@ var main = (function(){
 		}
 
 	}
-	var _ViewStateChange = function(e){
-		e.preventDefault();
-		var
-			$this = $(this),
-			item = $this.closest('.content-bar__item'),
-			view = item.data('view'),
-			ListOfItems = $('#sel-content'),
-			ModificationPrefix = 'content-page__list_',
-			ClassOfViewState = ModificationPrefix +view+'_active';
-
-		  ListOfItems.attr('class',ClassOfViewState );
-		}
 
 
-	//var _prevClass = '';
-	//var _changeState = function($this){
-	//	var
-	//		item = $this.closest('.content-bar__item'),
-	//		view = item.data('view'),
-	//		ListOfItems = $('#sel-content'),
-	//		ModificationPrefix = 'content-page__list_';
-    //
-	//	$(ListOfItems).addClass('content-page__list_'+ view);
-	//var _sort_1 = function (){
-	//	$('#list-1').addClass('content-bar__sort_1_active');
-	//	$('#list-2').removeClass('content-bar__sort_2_active');
-	//	$('#list-3').removeClass('content-bar__sort_3_active');
-	//	$('#sel').addClass('sel-1').removeClass('sel-2').removeClass('sel-3')
-	//}
-	//var _sort_2 =  function (){
-	//	$('#list-2').addClass('content-bar__sort_2_active');
-	//	$('#list-1').removeClass('content-bar__sort_1_active');
-	//	$('#list-3').removeClass('content-bar__sort_3_active');
-	//	$('#sel').addClass('sel-2').removeClass('sel-1').removeClass('sel-3')
-	//}
-	//var _sort_3 = function (){
-	//	$('#list-3').addClass('content-bar__sort_3_active');
-	//	$('#list-2').removeClass('content-bar__sort_2_active');
-	//	$('#list-1').removeClass('content-bar__sort_1_active');
-	//	$('#sel').addClass('sel-3').removeClass('sel-2').removeClass('sel-1')
-	//}
+
 	var _accordeonUp = function(e){
 		e.preventDefault();
 		var $this = $(this),
@@ -196,7 +156,6 @@ var main = (function(){
 			init: init
 		};
 
-
 	$(document).ready(function(){
 		if ($('.wrapper-inner__rating').length){
 			_RatingWidget.init();
@@ -207,11 +166,46 @@ var main = (function(){
 		if ($('.content-bar__select').length){
 			_selects.init();
 		}
-	});
+
+
+	})
 
 })();
 
 
-
-
  main.init();
+
+var ViewStateChange = (function() {
+
+	var _changeState = function($this){
+		var
+			item = $this.closest('.content-bar__item'),
+			view = item.data('view'),
+			ListOfItems = $('#sel-content'),
+			ModificationPrefix = 'content-page__list_',
+			ClassOfViewState = ModificationPrefix + view;
+			_changeActive($this);
+			ListOfItems.attr('class', ClassOfViewState);
+			console.log(view);
+	}
+	var _changeActive = function($this){
+		$this
+			.closest('.content-bar__item').addClass('active')
+			.siblings().removeClass('active');
+	}
+
+	return {
+		init: function () {
+			$('.sort_view-link').on('click', function (e) {
+				e.preventDefault();
+				_changeState($(this));
+			});
+		}
+
+	}
+
+}());
+
+$(document).ready(function(){
+	ViewStateChange.init();
+});

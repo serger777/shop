@@ -10,31 +10,22 @@ html
 		meta(http-equiv = 'Content-Type', content = 'text/html; charset=utf-8')
 		meta(name="viewport" content="width=device-width, initial-scale=1" )
 		link(rel="stylesheet" type='text/css' href="/css/main.css")
-		script(src='bower_components/modernizr/modernizr.js')
+		script(src='bower/modernizr/modernizr.js')
 		title
 			block title
 	body
 		.wrapper
 			.maincontent
-
 				include _common/_header
-
-
 				.content-wrapper
 					.container
-
 						.content
 							+nav('crumbs__navigation', ['Главаня >', 'Каталог'], 1)
-							h1	Мобильные телефоны
+							h1 Мобильные телефоны
 							.content__inner
-
 								block content
-
 				include _common/_block-info
-
 		include _common/_footer
-
-
 		script("src=/bower/jquery/jquery.min.js")
 		script("src=/js/select2.min.js")
 		script("src=/js/columnizer.js")

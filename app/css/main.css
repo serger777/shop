@@ -46,14 +46,17 @@
 .content-bar__block {
   float: right;
 }
+.content-bar .content-bar__sort_1.active .sort-icon {
+  background: url('../img/icons/sort-s300ee4b7de.png') 0 -86px no-repeat;
+}
 .content-bar .content-bar__sort_1 .sort-icon {
   background: url('../img/icons/sort-s300ee4b7de.png') 0 0 no-repeat;
 }
 .content-bar .content-bar__sort_1 .sort-icon:hover {
   background: url('../img/icons/sort-s300ee4b7de.png') 0 -86px no-repeat;
 }
-.content-bar .content-bar__sort_1_active .sort-icon {
-  background: url('../img/icons/sort-s300ee4b7de.png') 0 -86px no-repeat;
+.content-bar .content-bar__sort_2.active .sort-icon {
+  background: url('../img/icons/sort-s300ee4b7de.png') 0 -259px no-repeat;
 }
 .content-bar .content-bar__sort_2 .sort-icon {
   background: url('../img/icons/sort-s300ee4b7de.png') 0 -172px no-repeat;
@@ -61,16 +64,13 @@
 .content-bar .content-bar__sort_2 .sort-icon:hover {
   background: url('../img/icons/sort-s300ee4b7de.png') 0 -259px no-repeat;
 }
-.content-bar .content-bar__sort_2_active .sort-icon {
-  background: url('../img/icons/sort-s300ee4b7de.png') 0 -259px no-repeat;
+.content-bar .content-bar__sort_3.active .sort-icon {
+  background: url('../img/icons/sort-s300ee4b7de.png') 0 -433px no-repeat;
 }
 .content-bar .content-bar__sort_3 .sort-icon {
   background: url('../img/icons/sort-s300ee4b7de.png') 0 -346px no-repeat;
 }
 .content-bar .content-bar__sort_3 .sort-icon:hover {
-  background: url('../img/icons/sort-s300ee4b7de.png') 0 -433px no-repeat;
-}
-.content-bar .content-bar__sort_3_active .sort-icon {
   background: url('../img/icons/sort-s300ee4b7de.png') 0 -433px no-repeat;
 }
 .content-bar__item {
@@ -81,6 +81,9 @@
   display: inline-block;
   vertical-align: bottom;
   position: relative;
+}
+.content-bar__item .sort_view-link {
+  display: inline-block;
 }
 .content-bar .sort-icon {
   position: absolute;
@@ -1253,7 +1256,6 @@ input[type="search"]::-webkit-search-decoration {
 }
 .accordeon__content .inner-item {
   padding: 0px 20px 10px;
-  display: none;
 }
 .accordeon__content .os__list {
   margin-bottom: 15px;

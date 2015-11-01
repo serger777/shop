@@ -1,7 +1,5 @@
-node_modules
-app/bower_components
+/app/bower
+/node_modules
 dist
 .idea
-bower_components
-
 .sass-cache

@@ -4,4 +4,5 @@
 2. cd site
 3. npm install
 4. bower install
-5. gulp
+5. gem install compass
+6. gulp
